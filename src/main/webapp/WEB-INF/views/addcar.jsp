@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin Page: Add cars</title>
-    <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="../resources/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     </head>
   <body style="background=#aabbcc;">
     <div class="container">
@@ -26,7 +26,7 @@
 								<div class="page-header">
                                     <h2 class="text-primary"><strong>Add cars</strong></h2>
 								</div>
-								<form:form class="well" action="admin/addcar" modelAttribute="addcar" method="POST" onsubmit="return validate();">
+								<form:form class="well" action="addCars" modelAttribute="addcar" method="POST" onsubmit="return validate();">
 										  <div class="form-group">
 											<label for="brand" class="text-warning">Brand</label>
 											<form:input path="brand" cssClass="form-control" placeholder="Car Brand" />

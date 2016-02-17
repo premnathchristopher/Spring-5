@@ -5,8 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
 </head>
 <body>
+<jsp:include page="head.jsp"></jsp:include>
+<pre>
+
+</pre>
 <h2> Success !</h2>
 </body>
 </html>

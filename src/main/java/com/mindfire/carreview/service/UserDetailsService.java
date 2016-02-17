@@ -2,6 +2,8 @@ package com.mindfire.carreview.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -47,7 +49,7 @@ public class UserDetailsService {
 
 	}
 	
-	public String UserLogin(UserSigninDto dto, Model model) {
+	public String UserLogin(UserSigninDto dto, Model model,HttpSession session) {
 
 		List<UserDetails> checkExist = userRepository.findByUsername(dto.getUsername());
 
@@ -55,9 +57,11 @@ public class UserDetailsService {
 		if (checkExist != null && new BCryptPasswordEncoder().matches(dto.getPassword(), password)) {
 			if(checkExist.get(0).getPrivilege().equals("admin"))
 			{
+				session.setAttribute("role", "admin");
 				return "redirect:admin";
 			} else {
-				return "success";
+				session.setAttribute("role", "user");
+				return "redirect:home";
 			}
 		} else {
 			model.addAttribute("status", "Username or Password Error!!!");

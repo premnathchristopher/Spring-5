@@ -15,7 +15,7 @@
 
 </pre>
 <h2><a href="addcar"> Add Cars</a></h2>
-<h2><a href="admin/adddetails"> Specify details</a></h2>
+<h2><a href="addcarDetails"> Specify details</a></h2>
 <!-- <h2><a href="admin/gallery"> Update Gallery</a></h2> -->
 <!-- <h2><a href="admin/manageusers">Manage Users</a></h2> -->
 </body>

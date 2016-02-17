@@ -1,5 +1,7 @@
 package com.mindfire.carreview.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +25,8 @@ public class SignUpController {
 		return userDetailsService.createUserDetails(dto, model);
 	}
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("login") UserSigninDto dto, Model model){
-		return userDetailsService.UserLogin(dto, model);
+	public String login(@ModelAttribute("login") UserSigninDto dto, Model model,HttpSession session){
+		return userDetailsService.UserLogin(dto, model,session);
 	}
 	
 

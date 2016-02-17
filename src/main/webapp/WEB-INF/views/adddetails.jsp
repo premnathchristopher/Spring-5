@@ -6,8 +6,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Admin Page: Add Details</title>
-    <link rel="stylesheet" type="text/css" href="../resources/css/bootstrap.css"/>
-	<link rel="stylesheet" type="text/css" href="../resources/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="resources/css/bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="resources/css/style.css"/>
     </head>
   <body style="background=#aabbcc;">
     <div class="container">
@@ -26,37 +26,36 @@
 								<div class="page-header">
                                     <h2 class="text-primary"><strong>Add specifications</strong></h2>
 								</div>
-								<form:form class="well" action="admin/adddetails" modelAttribute="addcardetails" method="POST" onsubmit="return validate();">
+								<form:form cssClass="well" action="addDetails" modelAttribute="addDetails" method="POST" onsubmit="return validate();">
 										  <div class="form-group">
 											<label for="car_id" class="text-warning">car_id</label>
 											<form:input path="car_id" cssClass="form-control" placeholder="matching car_id" />
 										  </div>
-										  
 										  <div class="form-group">
-											<label for="des" class="text-warning">Description</label>
-											<form:input path="desription" cssClass="form-control" placeholder="description" />
+											<label for="description" class="text-warning">Description</label>
+											<form:textarea path="description" cssClass="form-control" placeholder="description" />
 										  </div>
 										  <div class="form-group">
 											<label for="launch" class="text-warning">Launch date</label>
-											<form:input path="launch" cssClass="form-control" placeholder="launch date"/>
+											<form:input path="launchdate" type ="date" cssClass="form-control" placeholder="launch date(MM/dd/yyyy)"/>
 										  </div>
                                         <div class="form-group">
 											<label for="engine" class="text-warning">Engine</label>
 											<form:input path="engine" cssClass="form-control" placeholder="engine"/>
 										  </div>
-										  <div class="form-group">
-											<label for="doors" class="text-warning">Doors</label>
-											<form:input path="doors" cssClass="form-control" placeholder="doors" />
-										  </div>
+										   </div>
 										  <div class="form-group">
 											<label for="power" class="text-warning">Power</label>
 											<form:input path="power" cssClass="form-control" placeholder="power"/>
 										  </div>
+										  <div class="form-group">
+											<label for="doors" class="text-warning">Doors</label>
+											<form:input path="doors" cssClass="form-control" placeholder="no. of doors" />
                                         <div class="form-group">
 											<label for="seats" class="text-warning">Seats</label>
-											<form:input path="seats" cssClass="form-control" placeholder="seats"/>
+											<form:input path="seats" cssClass="form-control" placeholder="no. of seats"/>
 										  </div>
-						  <a href="/carreview/admin/" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>Back </a>
+						  <a href="/carreview/admin/addcar" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>Back </a>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span>Add</button>
 						</form:form>
 					</div>
@@ -65,6 +64,7 @@
 		  </div>
         </section>
 	</div>
+	
 
    <script src="resources/js/jquery-2.2.0.min.js"></script>
 	<script src="resources/js/bootstrap.min.js"></script> 

@@ -26,7 +26,7 @@
 								<div class="page-header">
                                     <h2 class="text-primary"><strong>Login here</strong></h2><span class="glyphicon glyphicon-user"></span>
 								</div>
-								${status}
+								<h4>${status}</h4>
 								<form:form class="well" action="login" modelAttribute="login" method="POST" onsubmit="return validate();">
                                         <div class="form-group">
 											<label for="email" class="text-warning">Username</label>
@@ -36,7 +36,7 @@
                                             <label for="password" class="text-warning">Password</label>
 											<form:password path="password" cssClass="form-control" placeholder="Enter password"/>
 										  </div>
-						  <a href="/carreview/" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>Back </a>
+						  <a href="/carreview/" class="btn btn-success"><span class="glyphicon glyphicon-home"></span>Home </a>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span>Login</button>
 						</form:form>
 					</div>

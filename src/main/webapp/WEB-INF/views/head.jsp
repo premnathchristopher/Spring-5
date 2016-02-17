@@ -9,9 +9,13 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a href="/carreview/" class="navbar-brand"><span class="glyphicon glyphicon-home"></span> Car Reviews</a>
-					<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Login </a> 
-                
-				
+					<% if (session.getAttribute("role") == null || session.getAttribute("role").equals("")) { %>
+						<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Login </a> 
+					<% } else { %>
+					<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Logout </a> 
+					<% } %>
+					
+					
 <!--                Search button -->
 <%-- 					<form:form cssClass="navbar-form navbar-right" role="search"> --%>
 <!-- 						<div class="form-group"> -->

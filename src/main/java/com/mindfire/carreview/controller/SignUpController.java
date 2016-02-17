@@ -17,17 +17,15 @@ import com.mindfire.carreview.service.UserDetailsService;
 public class SignUpController {
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
-	
-	
-	@RequestMapping(value="/signup",method = RequestMethod.POST)
+
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public String signup(@ModelAttribute("user") UserRegistrationDto dto, Model model) {
 		return userDetailsService.createUserDetails(dto, model);
 	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String login(@ModelAttribute("login") UserSigninDto dto, Model model,HttpSession session){
-		return userDetailsService.UserLogin(dto, model,session);
+	public String login(@ModelAttribute("login") UserSigninDto dto, Model model, HttpSession session) {
+		return userDetailsService.UserLogin(dto, model, session);
 	}
-	
 
 }

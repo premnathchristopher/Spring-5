@@ -11,15 +11,17 @@ import com.mindfire.carreview.repository.CarRepository;
 @Service
 public class CarService {
 	@Autowired
-	CarRepository carRepository;
-	public String addNewCars(AddCarDTO dto,Model model){
-		Car newCar= new Car();
+	public CarRepository carRepository;
+
+	public String addNewCars(AddCarDTO dto, Model model) {
+		Car newCar = new Car();
 		newCar.setBrand(dto.getBrand());
 		newCar.setModel(dto.getModel());
 		newCar.setPrice(dto.getPrice());
-		
-		Car check= carRepository.save(newCar);
-		if (check.equals(null)){
+		newCar.setDescription(dto.getDescription());
+
+		Car check = carRepository.save(newCar);
+		if (check.equals(null)) {
 			return "redirect:addcar";
 		} else {
 			return "result";

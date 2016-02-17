@@ -21,6 +21,7 @@ public class UserDetailsService {
 	public UserRepository userRepository;
 
 	public String createUserDetails(UserRegistrationDto dto, Model model) {
+
 		List<UserDetails> userExists = userRepository.findByEmail(dto.getEmail());
 		if (userExists.isEmpty()) {
 
@@ -48,26 +49,24 @@ public class UserDetailsService {
 		}
 
 	}
-	
-	public String UserLogin(UserSigninDto dto, Model model,HttpSession session) {
+
+	public String UserLogin(UserSigninDto dto, Model model, HttpSession session) {
 
 		List<UserDetails> checkExist = userRepository.findByUsername(dto.getUsername());
 
 		String password = checkExist.get(0).getPassword();
 		if (checkExist != null && new BCryptPasswordEncoder().matches(dto.getPassword(), password)) {
-			if(checkExist.get(0).getPrivilege().equals("admin"))
-			{
+			if (checkExist.get(0).getPrivilege().equals("admin")) {
 				session.setAttribute("role", "admin");
 				return "redirect:admin";
 			} else {
 				session.setAttribute("role", "user");
-				return "redirect:home";
+				return "redirect:/";
 			}
 		} else {
 			model.addAttribute("status", "Username or Password Error!!!");
 			return "login";
 		}
 	}
-	
-	
+
 }

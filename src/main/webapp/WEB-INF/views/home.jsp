@@ -1,5 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+
  <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <<html lang="en">
 <head>
@@ -28,50 +27,19 @@
                 
                 <!--signup/login-->
                 <a href="/carreview/signup" class="btn btn-warning navbar-btn navbar-right" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up </a> 
-                <a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="signup"><span class="glyphicon glyphicon-user"></span> Login </a> 
-                
-<!--                     <div class=" navbar-btn navbar-right">			 -->
-<!--                         <div class="dropdown"> -->
-<!--                             <button class="btn btn-warning dropdown-toggle" type="button" id="login" data-toggle="dropdown" aria-haspopup="true"  -->
-<!--                                     aria-expanded="true"><span class="glyphicon glyphicon-log-in"></span> Login <span class="caret"></span>  -->
-<!--                             </button> -->
-<!--                                 <ul class="dropdown-menu" aria-labelledby="login"> -->
-<!--                                     <div class="col-md-8"> -->
-<%--                                         <form:form action="userlogin" modelAttribute="usersignin" class="form-inline" method="post"><br> --%>
-<!--                                             <li> -->
-<!--                                                 <div class="form-inline"> -->
-<!--                                                     <label class="text-primary" for="email">Email address</label> -->
-<%--                                                     <form:input path="email" cssClass="form-control" placeholder="Enter your email address"/> --%>
-<!--                                                 </div><br> -->
-<!--                                             </li> -->
-<!--                                             <li> -->
-<!--                                                 <div class="form-inline"> -->
-<!--                                                         <label class="text-primary" for="password">Password</label> -->
-<%--                                                        <form:password path="password" cssClass="form-control" placeholder="first name"/> --%>
-<!--                                                 </div> -->
-<!--                                             </li> -->
-<!--                                             <li> -->
-<!--                                                 <div class="checkbox"> -->
-<!--                                                     <label class="text-danger"> -->
-<!--                                                         <input type="checkbox">Remember me -->
-<!--                                                     </label> -->
-<!--                                                 </div> -->
-<!--                                             </li> -->
-<!--                                             <li>  -->
-<!--                                             <button type="submit" class="btn btn-success">Sign in</button> -->
-<!--                                             </li> -->
-<%--                                         </form:form> --%>
-<!--                                     </div> -->
-<!--                                 </ul> -->
-<!--                         </div> -->
-<!--                     </div>end of signup/login -->
-               
+              <% if (session.getAttribute("role") == null || session.getAttribute("role").equals("")) { %>
+						<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Login </a> 
+					<% } else { %>
+					<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Logout </a> 
+					<% } %>
 					<ul class="nav navbar-nav">
 						<li><a href="#news"> News</a>
 						<li><a href="#gallery"> Gallery</a>
 						<li><a href="#brands">Top Brands</a>
 						<li><a href="#reviews"> Reviews</a>
+						
 						<li><a href="write"> Write a Review</a>
+						
 					</ul>
 				</div>
 			</div><!-- End Container-->

@@ -39,6 +39,10 @@
 											<label for="price" class="text-warning">Price</label>
 											<form:input path="price" cssClass="form-control" placeholder="Price"/>
 										  </div>
+										   <div class="form-group">
+											<label for="description" class="text-warning">Description</label>
+											<form:textarea path="description" cssClass="form-control" placeholder="Details"/>
+										  </div>
 						  <a href="/carreview/admin/" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>Back </a>
                         <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-upload"></span>Add</button>
 						</form:form>

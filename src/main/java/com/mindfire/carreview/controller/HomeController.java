@@ -14,52 +14,42 @@ import com.mindfire.carreview.DTO.UserSigninDto;
  */
 @Controller
 public class HomeController {
-	
 
-	@RequestMapping(value="/",method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
 		return "home";
 	}
-	
-	@RequestMapping(value="/login",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login(@ModelAttribute("login") UserSigninDto dto, Model model) {
 		model.addAttribute(new UserRegistrationDto());
 		return "login";
 	}
-	
-	@RequestMapping(value="/signup",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String signup(@ModelAttribute("user") UserRegistrationDto dto, Model model) {
 		model.addAttribute(new UserRegistrationDto());
 		return "signup";
 	}
-	
-	
-	
-	@RequestMapping(value="/news",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/news", method = RequestMethod.GET)
 	public String news(Model model) {
 		return "news";
 	}
-	
-	@RequestMapping(value="/reviews",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/reviews", method = RequestMethod.GET)
 	public String reviews(Model model) {
 		return "reviews";
 	}
-	
-	@RequestMapping(value="/topbrands",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/topbrands", method = RequestMethod.GET)
 	public String topbrands(Model model) {
 		return "topbrands";
 	}
-	
-	@RequestMapping(value="/gallery",method = RequestMethod.GET)
+
+	@RequestMapping(value = "/gallery", method = RequestMethod.GET)
 	public String gallery(Model model) {
 		return "gallery";
 	}
-	
-	@RequestMapping(value="/write",method = RequestMethod.GET)
-	public String review(Model model) {
-		return "write";
-	}
-	
-	
-	
+
 }

@@ -7,18 +7,17 @@ public class UserRegistrationDto {
 
 	private String email;
 	private String username;
-	
 
 	private String password;
 
 	public UserRegistrationDto() {
 	}
 
-	public UserRegistrationDto(String firstname, String lastname, String email, String username,String password) {
+	public UserRegistrationDto(String firstname, String lastname, String email, String username, String password) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.email = email;
-		this.username=username;
+		this.username = username;
 		this.password = password;
 	}
 
@@ -53,7 +52,7 @@ public class UserRegistrationDto {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public String getUsername() {
 		return username;
 	}

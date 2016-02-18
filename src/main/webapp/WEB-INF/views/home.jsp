@@ -26,20 +26,21 @@
 				</div><!-- End of navbar Header -->
                 
                 <!--signup/login-->
-                <a href="/carreview/signup" class="btn btn-warning navbar-btn navbar-right" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up </a> 
+                 
               <% if (session.getAttribute("role") == null || session.getAttribute("role").equals("")) { %>
+              <a href="/carreview/signup" class="btn btn-warning navbar-btn navbar-right" id="signup"><span class="glyphicon glyphicon-user"></span> Sign Up </a>
 						<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Login </a> 
 					<% } else { %>
-					<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Logout </a> 
+					<a href="/carreview/logout" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Logout </a> 
 					<% } %>
 					<ul class="nav navbar-nav">
 						<li><a href="#news"> News</a>
 						<li><a href="#gallery"> Gallery</a>
 						<li><a href="#brands">Top Brands</a>
 						<li><a href="#reviews"> Reviews</a>
-						
+						  <% if (session.getAttribute("role") == "user") { %>
 						<li><a href="write"> Write a Review</a>
-						
+						<%} %>
 					</ul>
 				</div>
 			</div><!-- End Container-->

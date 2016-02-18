@@ -29,24 +29,29 @@
 								<form:form class="well" action="signup" modelAttribute="user" method="POST" onsubmit="return validate();">
 										  <div class="form-group">
 											<label for="fname" class="text-warning">First Name</label>
-											<form:input path="firstname" cssClass="form-control" placeholder="first name" />
+											<form:input path="firstname" cssClass="form-control" placeholder="first name"  required="required" />
+											<form:errors path="firstname" cssclass="error"></form:errors>
 										  </div>
 										  <div class="form-group">
 											<label for="lname" class="text-warning">Last Name</label>
-											<form:input path="lastname" cssClass="form-control" placeholder="last name"/>
+											<form:input path="lastname" cssClass="form-control" placeholder="last name" required="required"/>
+											<form:errors path="lastname" cssclass="error"></form:errors>
 										  </div>
 										  
                                         <div class="form-group">
 											<label for="email" class="text-warning">Email Address</label>
-											<form:input path="email" cssClass="form-control" placeholder="email"/>
+											<form:input path="email" cssClass="form-control" placeholder="email" required="required" />
+											<form:errors path="email" cssclass="error"></form:errors>
 										  </div>
 										   <div class="form-group">
 											<label for="username" class="text-warning">Username</label>
-											<form:input path="username" cssClass="form-control" placeholder="username"/>
+											<form:input path="username" cssClass="form-control" placeholder="username" required="required" />
+											<form:errors path="username" cssclass="error"></form:errors>
 										  </div>
                                         <div class="form-group">
                                             <label for="password" class="text-warning">Password</label>
-											<form:password path="password" cssClass="form-control" placeholder="password"/>
+											<form:password path="password" cssClass="form-control" placeholder="password" required="required"/>
+											<form:errors path="password" cssclass="error"></form:errors>
 										  </div>
 <!--                                             <div class="form-group"> -->
 <!--                                             <label for="confirmpassword" class="text-warning">Confirm-Password</label> -->

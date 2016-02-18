@@ -12,7 +12,7 @@
 					<% if (session.getAttribute("role") == null || session.getAttribute("role").equals("")) { %>
 						<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Login </a> 
 					<% } else { %>
-					<a href="/carreview/login" class="btn btn-warning navbar-btn navbar-right" id="login"><span class="glyphicon glyphicon-user"></span> Logout </a> 
+					<a href="/carreview/logout" class="btn btn-warning navbar-btn navbar-right" id="logout"><span class="glyphicon glyphicon-user"></span> Logout </a> 
 					<% } %>
 					
 					
@@ -28,7 +28,9 @@
 						<li><a href="gallery"> Gallery</a>
 						<li><a href="topbrands">Top Brands</a>
 						<li><a href="reviews"> Reviews</a>
+						 <% if (session.getAttribute("role") == "user") { %>
 						<li><a href="write"> Write a Review</a>
+						<%} %>
 						
 					</ul>
 				</div>

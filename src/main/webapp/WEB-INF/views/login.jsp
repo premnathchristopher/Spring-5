@@ -13,7 +13,7 @@
     <div class="container">
         <section>
             <div class="page-header">
-                <h1 class="text-info">Login Page</h1>
+                <h1 class="text-info">Car Reviews</h1>
             </div>
         <div class="row">
 			  <div class="col-md-8">

@@ -5,6 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 @Entity
 @Table(name = "userdetails")
@@ -12,11 +16,15 @@ public class UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long user_id;
+	@NotNull @Size(min=4,max=10)
 	private String firstname;
+	@NotNull @Size(min=3,max=10)
 	private String lastname;
+	@NotNull @Email
 	private String email;
+	@NotNull @Size(min=3,max=10)
 	private String username;
-
+	@NotNull @Size(min=4,max=10)
 	private String password;
 	private String privilege;
 
